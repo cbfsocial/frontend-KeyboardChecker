@@ -1,0 +1,274 @@
+body{
+  background: #222831;
+  color: #EEEEEE;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --green: #A2CCB6;
+  --yellow: #FCEEB5;
+  --peach: #EE786E;
+  --off-white: #FFFFF4;
+  --neon-blue: #00ADB5;
+  
+}
+
+
+.page-wrapper{
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.key-info-main-text{
+  font-size: 48px;
+}
+.main-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header{
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  font-size: x-large;
+  border-bottom: 1px solid var(--neon-blue);
+}
+
+.key-info-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 96px;
+}
+.key-info-main{
+  width: 100%;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.key-info, .checkbox{
+  border: 2px solid var(--neon-blue);
+  width: 250px;
+  height: 250px;
+  border-radius: 30px;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.start-message-wrapper, .home-wrapper{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.start-message, .home-text{
+  border: 1px solid var(--neon-blue);
+  font-size: xx-large;
+  padding: 36px;
+  border-radius: 32px;
+}
+
+.history-wrapper{
+  border: 2px solid var(--neon-blue);
+  height: 250px;
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid var(--neon-blue);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 24px 12px;
+  gap: 10px;
+}
+
+.history-key{
+  font-size: 32px;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid var(--neon-blue);
+  padding: 32px;
+  border-radius: 20%;
+}
+
+.history-key:hover{
+  background: var(--neon-blue);
+}
+
+.home-wrapper{
+  gap: 48px;
+}
+
+.home-text{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.checkbox-wrapper{
+  height: 75vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.checkbox{
+  border: 1px solid var(--neon-blue);
+  padding: 8px;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--neon-blue);
+}
+
+.doubleclick{
+  background: #D21312;
+}
+
+.doubleclick-counter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
+.doubleclick-warning{
+  font-size: 48px;
+}
+
+
+
+
+
+span {
+  display: block;
+  margin-top: -5px;
+}
+
+.keyboard {
+  min-width: 780px;
+  max-height: 262px;
+  margin: 0px auto;
+  border: 3px solid;
+  border-radius: 10px;
+}
+
+.row {
+  margin-top: 2px;
+  overflow: hidden;
+}
+
+.key {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background-color: var(--off-white);
+  color: #000000;
+  line-height: 48px;
+  text-align: center;
+  margin-left: 2px;
+  border-radius: 4px;
+  transition: all 1s ease;
+}
+
+.key-symbols {
+  line-height: 28px;
+}
+
+.key-delete {
+  width: 100px;
+}
+
+.key-oneandhalf {
+  width: 75px;
+}
+
+.key-esc {
+  background: var(--peach);
+  
+}
+
+.key-enter {
+  width: 112px;
+}
+
+.key-caps {
+  width: 90px;
+}
+
+.key-shift-left {
+  width: 100px;
+}
+
+.key-spacebar {
+  width: 300px;
+}
+
+.key-bottom-funct {
+  width: 70px;
+}
+
+.key-arrow {
+  background: var(--green);
+}
+
+svg{
+padding-top: 12px;
+}
+
+.keyboard-page{
+  height: 75dvh;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.checked-key{
+  background-color: var(--neon-blue);
+  color: #fff;
+  text-align: center;
+  margin-left: 2px;
+  border-radius: 4px;
+}
+
+.active-key{
+  scale: 110%;
+  background: var(--neon-blue);
+}
+
+.reset-button{
+  padding: 16px 24px;
+  border: 1px solid var(--neon-blue);
+  font-size: xx-large;
+  padding: 36px;
+  border-radius: 32px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/* border color: 00ADB5 */
+/* text color: #EEEEEE*/
