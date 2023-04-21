@@ -253,9 +253,8 @@ padding-top: 12px;
   border-radius: 4px;
 }
 
-.active-key{
-  scale: 110%;
-  background: var(--neon-blue);
+.active-key {
+  background: #7C96AB;
 }
 
 .reset-button{

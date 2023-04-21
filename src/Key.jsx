@@ -4,11 +4,12 @@ export default function Key({
   keyCode,
   altKey,
   className,
-  id,
+  activeKey,
 }) {
   const isChecked = pressedKey.includes(Number(keyCode)) ? " checked-key" : "";
+  const isActive = activeKey === Number(keyCode) ? " active-key" : "";
   return (
-    <div className={"key " + className + isChecked} key={id}>
+    <div className={"key " + className + isChecked + isActive}>
       {altKey} <span>{keyName}</span>
     </div>
   );

@@ -4,33 +4,33 @@ import Key from "./Key";
 import { nanoid } from "nanoid";
 import { useState, useRef, useEffect } from "react";
 export default function Keyboard() {
-  const [activeKey, setActiveKey] = useState();
   const [pressedKey, setPressedKey] = useState([]);
-  const prevKeyRef = useRef("");
+  const [activeKey, setActiveKey] = useState("");
+
+  const mainDiv = useRef(null);
 
   useEffect(() => {
-    function handleKeyDown(event) {
-      event.preventDefault();
-      if (
-        pressedKey.length > 0 ||
-        pressedKey?.includes((el) => el != event.keyCode)
-      ) {
-        setPressedKey([...pressedKey, event.keyCode]);
-        console.log(pressedKey);
-      }
+    if (mainDiv.current) {
+      mainDiv.current.focus();
     }
+  }, []);
 
-    function handleKeyUp(event) {
-      // let e = event;
-      // handleKeyDown(e);
-    }
-    document.addEventListener("keydown", handleKeyDown);
-    // document.addEventListener("keyup", handleKeyUp);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      // document.removeEventListener("keyup", handleKeyUp);
-    };
-  }, [pressedKey]);
+  function handleKeyDown(event) {
+    event.preventDefault();
+    setActiveKey(event.keyCode);
+    setPressedKey((prev) => {
+      if ([...prev].find((el) => Number(el) === event.keyCode)) {
+        return [...prev];
+      } else {
+        return [...prev, event.keyCode];
+      }
+    });
+    console.log(pressedKey);
+  }
+
+  function handleKeyUp() {
+    setActiveKey("");
+  }
   const keysRow1 = [
     {
       keyName: <Icon.X />,
@@ -336,7 +336,13 @@ export default function Keyboard() {
     },
   ];
   return (
-    <div>
+    <div
+      className="page-wrapper"
+      onKeyDown={(e) => handleKeyDown(e)}
+      onKeyUp={() => handleKeyUp()}
+      ref={mainDiv}
+      tabIndex={0}
+    >
       <Header />
       <div className="keyboard-page">
         <div className="keyboard">
@@ -346,9 +352,10 @@ export default function Keyboard() {
                 keyName={el.keyName}
                 altKey={el.altKey}
                 className={el.className}
-                id={el.id}
+                key={el.id}
                 keyCode={el.keyCode}
                 pressedKey={pressedKey}
+                activeKey={activeKey}
               />
             ))}
           </div>
@@ -359,9 +366,10 @@ export default function Keyboard() {
                 keyName={el.keyName}
                 altKey={el.altKey}
                 className={el.className}
-                id={el.id}
+                key={el.id}
                 keyCode={el.keyCode}
                 pressedKey={pressedKey}
+                activeKey={activeKey}
               />
             ))}
           </div>
@@ -372,9 +380,10 @@ export default function Keyboard() {
                 keyName={el.keyName}
                 altKey={el.altKey}
                 className={el.className}
-                id={el.id}
+                key={el.id}
                 keyCode={el.keyCode}
                 pressedKey={pressedKey}
+                activeKey={activeKey}
               />
             ))}
           </div>
@@ -385,9 +394,10 @@ export default function Keyboard() {
                 keyName={el.keyName}
                 altKey={el.altKey}
                 className={el.className}
-                id={el.id}
+                key={el.id}
                 keyCode={el.keyCode}
                 pressedKey={pressedKey}
+                activeKey={activeKey}
               />
             ))}
           </div>
@@ -398,9 +408,10 @@ export default function Keyboard() {
                 keyName={el.keyName}
                 altKey={el.altKey}
                 className={el.className}
-                id={el.id}
+                key={el.id}
                 keyCode={el.keyCode}
                 pressedKey={pressedKey}
+                activeKey={activeKey}
               />
             ))}
           </div>
